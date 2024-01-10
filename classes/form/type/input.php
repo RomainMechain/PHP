@@ -1,5 +1,8 @@
 <?php
 
+namespace form\type;
+use form\genericFormElement;
+
 abstract class input extends genericFormElement
 {
     public function render(): string
