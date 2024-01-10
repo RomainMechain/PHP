@@ -1,5 +1,8 @@
 <?php
 
+namespace form;
+use form\inputRenderInterface;
+
 abstract class genericFormElement implements inputRenderInterface
 {
     protected string $type;
