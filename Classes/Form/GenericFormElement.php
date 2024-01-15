@@ -8,16 +8,14 @@ use Form\InputRenderInterface;
 abstract class GenericFormElement implements InputRenderInterface
 {
     protected string $type;
-    protected string $label;
     protected bool $required = false;
-    protected int $answer;
+    protected string $answer;
     protected int $score;
     protected array $choices = [];
 
-    public function __construct( protected readonly string $name,string $type, string $label, bool $required = false, int $answer = 0, int $score = 0, array $choices = [])
+    public function __construct( protected readonly string $name,string $type, bool $required = false, string $answer, int $score = 0, array $choices = [])
     {
         $this->type = $type;
-        $this->label = $label;
         $this->required = $required;
         $this->answer = $answer;
         $this->score = $score;
@@ -29,13 +27,18 @@ abstract class GenericFormElement implements InputRenderInterface
     {
         return $this->render();
     }
-
-    function getId(): string 
+    public function getValues(int $id): string
     {
-        return sprintf('form_%s', $this->name);
+        
+        return $this->choices[$id];
     }
 
-    function getName(): string 
+    function getnbchoice(): int 
+    {
+        return count($this->choices);
+    }
+
+    function getName(): string
     {
         return $this->name;
     }
@@ -44,11 +47,8 @@ abstract class GenericFormElement implements InputRenderInterface
     {
         return $this->type;
     }
-    function getLabel(): string 
-    {
-        return $this->label;
-    }
-    function getAnswer(): int 
+
+    function getAnswer(): string 
     {
         return $this->answer;
     }
@@ -58,6 +58,9 @@ abstract class GenericFormElement implements InputRenderInterface
     }
     function getChoices(): array 
     {
+        foreach($this->choices as $choice){
+            echo $choice;
+        }
         return $this->choices;
     }
     function getRequired(): bool 
