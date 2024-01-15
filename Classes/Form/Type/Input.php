@@ -9,13 +9,14 @@ abstract class Input extends GenericFormElement
     public function render(): string
     {
         return sprintf(
-            '<input type="%s" %s value="%s" name="form[%s]" id="%s"/>', 
-            $this->type,
-            $this->isRequired() ? 'required="required"' : '',
-            $this->getValue(),
+            '<input type="%s" id="%s" name="%s" %s %s>',
+            $this->getType(),
+            $this->getId(),
             $this->getName(),
-            $this->getId()
+            $this->getRequired() ? 'required' : '',
+            $this->getChoices() // This is where the issue is
         );
+        
     }
 }
 ?>
