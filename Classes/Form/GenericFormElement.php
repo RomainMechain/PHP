@@ -8,19 +8,23 @@ use Form\InputRenderInterface;
 abstract class GenericFormElement implements InputRenderInterface
 {
     protected string $type;
+    protected string $label;
     protected bool $required = false;
-    protected mixed $value = '';
+    protected int $answer;
+    protected int $score;
+    protected array $choices = [];
 
-    public function __construct(
-        protected readonly string $name, // Readonly cause property is immutable
-        $required = false, 
-        string $defaultValue = ''
-    )
+    public function __construct( protected readonly string $name,string $type, string $label, bool $required = false, int $answer = 0, int $score = 0, array $choices = [])
     {
+        $this->type = $type;
+        $this->label = $label;
         $this->required = $required;
-        $this->value = $defaultValue;
+        $this->answer = $answer;
+        $this->score = $score;
+        $this->choices = $choices;
     }
 
+   
     public function __toString(): string
     {
         return $this->render();
@@ -36,10 +40,31 @@ abstract class GenericFormElement implements InputRenderInterface
         return $this->name;
     }
 
-    function getValue(): array|string 
+    function getType(): string 
     {
-        return $this->value;
+        return $this->type;
     }
+    function getLabel(): string 
+    {
+        return $this->label;
+    }
+    function getAnswer(): int 
+    {
+        return $this->answer;
+    }
+    function getScore(): int 
+    {
+        return $this->score;
+    }
+    function getChoices(): array 
+    {
+        return $this->choices;
+    }
+    function getRequired(): bool 
+    {
+        return $this->required;
+    }
+
 
     function isRequired(): bool
     {
