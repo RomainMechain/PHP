@@ -21,8 +21,5 @@ class Provider {
         $this->loadArray();
         return $this->array;
     }
-
-    
-    
 }
 ?>

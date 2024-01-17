@@ -9,17 +9,19 @@ abstract class GenericFormElement implements InputRenderInterface
 {
     protected string $type;
     protected bool $required = false;
+    protected string $question;
     protected string $answer;
     protected int $score;
     protected array $choices = [];
 
-    public function __construct( protected readonly string $name,string $type, bool $required = false, string $answer, int $score = 0, array $choices = [])
+    public function __construct( protected readonly string $name,string $type, bool $required = false, string $answer, int $score = 0, array $choices = [], string $question = '')
     {
         $this->type = $type;
         $this->required = $required;
         $this->answer = $answer;
         $this->score = $score;
         $this->choices = $choices;
+        $this->question = $question;
     }
 
    
@@ -72,6 +74,10 @@ abstract class GenericFormElement implements InputRenderInterface
     function isRequired(): bool
     {
         return $this->required;
+    }
+    function getQuestion(): string
+    {
+        return $this->question;
     }
 }
 ?>
