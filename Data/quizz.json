@@ -3,12 +3,7 @@
         "name": "tarot",
         "type": "radio",
         "question": "Qu'est-ce que le tarot de Marseille ?",
-        "choices": [
-            [0, "Un jeu de cartes"],
-            [1, "Un livre de voyance"],
-            [2, "Un rituel de médiumnité"],
-            [3, "Une technique de numérologie"]
-        ],
+        "choices": [ "Un jeu de cartes", "Un livre de voyance", "Un rituel de médiumnité", "Une technique de numérologie" ],
         "answer": "Un jeu de cartes",
         "score": 1,
         "required": true
@@ -17,12 +12,7 @@
         "name": "planetes",
         "type": "radio",
         "question": "Quelle planète en astrologie est associée à la communication et à l'expression de soi ?",
-        "choices": [
-            [0, "Vénus"],
-            [1, "Mars"],
-            [2, "Mercure"],
-            [3, "Saturne"]
-        ],
+        "choices": [ "Vénus", "Mars", "Mercure", "Saturne" ],
         "answer": "Mercure",
         "score": 1, 
         "required": true
@@ -31,12 +21,7 @@
         "name": "vie",
         "type": "radio",
         "question": "En numérologie, qu'est-ce que le 'chemin de vie' ?",
-        "choices": [
-            [0, "Un concept de voyage spirituel"],
-            [1, "Le calcul basé sur la date de naissance"],
-            [2, "Le lien entre le passé, le présent et le futur"],
-            [3, "L'interprétation des rêves"]
-        ],
+        "choices": [ "Un conept de voyage spirituel", "Le calcul basé sur la date de naissance", "Le lien entre le passé, le présent et le futur", "L'interprétation des rêves" ],
         "answer": "Le calcul basé sur la date de naissance",
         "score": 1,
         "required": true
@@ -45,13 +30,7 @@
         "name": "maths",
         "type": "radio",
         "question": "En utilisant la règle de la chaîne de dérivation, trouver dy/dx pour l'équation : y=ln(x^2-2)",
-        "choices": [
-            [0, "ln(2x)"],
-            [1, "1/(x^2-2)"],
-            [2, "2x/(x^2-2)"],
-            [3, "(x^2-2)"],
-            [4, "1/x"]
-        ],
+        "choices": [ "ln(2x)", "1/(x^2-2)", "2x/(x^2-2)", "(x^2-2)", "1/x" ],
         "answer": "2x/(x^2-2)",
         "score": 1,
         "required": true

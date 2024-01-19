@@ -31,7 +31,6 @@ abstract class GenericFormElement implements InputRenderInterface
     }
     public function getValues(int $id): string
     {
-        
         return $this->choices[$id];
     }
 
