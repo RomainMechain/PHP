@@ -1,11 +1,12 @@
 <?php
+// On recupère les informations des inputs de submit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $score = $_POST["score"];
 }
 
 try {
-    // le fichier de BD s'appellera contacts.sqlite3
+    //création de la base de données si elle n'existe pas 
     $file_db = new PDO('sqlite:bd.sqlite3');
     $file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     $file_db->exec("CREATE TABLE IF NOT EXISTS RESULTAT (
@@ -13,43 +14,37 @@ try {
         username TEXT NOT NULL,
         score INTEGER)");
 
-    
-
-    // Utilisez REPLACE INTO au lieu de INSERT INTO pour éviter l'erreur de contrainte UNIQUE
+    //Insertion du résultat du quiz dans la BD 
     $insert = "INSERT INTO RESULTAT (username, score) VALUES (:username, :score)";
     $stmt = $file_db->prepare($insert);
 
+    // Attribution des variables 
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':score', $score);
     $stmt->execute();
 
-    echo "Votre Score a bien été enregistré";
-    echo "<br>";
+    echo "<h1>Tableau des scores :</h1>";
 
-    // Récupère les résultats de la base de données triés par score
+    // Récupération des résultats
     $result = $file_db->query('SELECT * FROM RESULTAT ORDER BY score DESC');
     
     // Affiche les résultats dans un tableau HTML
-    echo "<h1> Classement </h1>";
-    echo "<br>";
-
     echo "<table border='1'>
             <tr>
-                <th>Username</th>
+                <th>Nom d'utilisateur</th>
                 <th>Score</th>
             </tr>";
-
-    foreach ($result as $m) {
+    foreach ($result as $ligne) {
         echo "<tr>
-                <td>" . $m['username'] . "</td>
-                <td>" . $m['score'] . "</td>
+                <td>" . $ligne['username'] . "</td>
+                <td>" . $ligne['score'] . "</td>
               </tr>";
     }
-
     echo "</table>";
 
-    // on ferme la connexion
+    // fermeture de la connexion
     $file_db = null;
+
 } catch (PDOException $ex) {
     echo "Erreur : " . $ex->getMessage();
 }
