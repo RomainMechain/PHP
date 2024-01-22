@@ -24,7 +24,7 @@ foreach ($_POST as $key => $value) {
 }
 echo "Votre score est de $score points.<br>";
 
-echo "<form action='../bd.php' method='post'>";
+echo "<form action='bd.php' method='post'>";
 echo "<input type='hidden' name='score' value='$score'>";
 echo "<input type='text' required name='username' placeholder='Entrez votre nom'>";
 echo "<input type='submit' value='Envoyer'>";
