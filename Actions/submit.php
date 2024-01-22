@@ -8,25 +8,20 @@ use Form\Type\Input;
 use Form\GenericFormElement;
 use Form\InputRenderInterface;
 
-// Récupère $lst_instance de la session
-$lst_instance = unserialize($_SESSION['lst_instance']);
+
+$dico_answer = $_SESSION['dico_answer'];
 
 echo "<h1> Resultat </h1>";
+$score = 0;
 foreach ($_POST as $key => $value) {
     echo "Le champ $key a la valeur $value.<br>";
-    $instanceRep = null;
-    foreach ($lst_instance as $instance) {
-        if ($instance->getName() == $key) {
-            $instanceRep = $instance;
-        }
-    }
-    if ($instanceRep != null) {
-        if ($instanceRep->getAnswer() == $value) {
-            echo "Bonne réponse !<br>";
-        } else {
-            echo "Mauvaise réponse !<br>";
-        }
+    if ($dico_answer[$key]["answer"] == $value) {
+        $score += $dico_answer[$key]["score"];
+        echo "Bonne réponse !<br>";
+    } else {
+        echo "Mauvaise réponse !<br>";
     }
 }
+echo "Votre score est de $score points.<br>";
 
 ?>
