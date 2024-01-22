@@ -1,0 +1,38 @@
+{
+    "1": {
+        "name": "tarot",
+        "type": "radio",
+        "question": "Qu'est-ce que le tarot de Marseille ?",
+        "choices": [ "Un jeu de cartes", "Un livre de voyance", "Un rituel de médiumnité", "Une technique de numérologie" ],
+        "answer": "Un jeu de cartes",
+        "score": 1,
+        "required": true
+    },
+    "2": {
+        "name": "planetes",
+        "type": "radio",
+        "question": "Quelle planète en astrologie est associée à la communication et à l'expression de soi ?",
+        "choices": [ "Vénus", "Mars", "Mercure", "Saturne" ],
+        "answer": "Mercure",
+        "score": 1, 
+        "required": true
+    },
+    "3": {
+        "name": "vie",
+        "type": "radio",
+        "question": "En numérologie, qu'est-ce que le 'chemin de vie' ?",
+        "choices": [ "Un conept de voyage spirituel", "Le calcul basé sur la date de naissance", "Le lien entre le passé, le présent et le futur", "L'interprétation des rêves" ],
+        "answer": "Le calcul basé sur la date de naissance",
+        "score": 1,
+        "required": true
+    },
+    "4": {
+        "name": "maths",
+        "type": "radio",
+        "question": "En utilisant la règle de la chaîne de dérivation, trouver dy/dx pour l'équation : y=ln(x^2-2)",
+        "choices": [ "ln(2x)", "1/(x^2-2)", "2x/(x^2-2)", "(x^2-2)", "1/x" ],
+        "answer": "2x/(x^2-2)",
+        "score": 1,
+        "required": true
+    }
+}
