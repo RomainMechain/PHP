@@ -1,37 +1,37 @@
 {
     "1": {
-        "name": "tarot",
+        "name": "langage",
         "type": "radio",
-        "question": "Qu'est-ce que le tarot de Marseille ?",
-        "choices": [ "Un jeu de cartes", "Un livre de voyance", "Un rituel de médiumnité", "Une technique de numérologie" ],
-        "answer": "Un jeu de cartes",
+        "question": "le quelle n'est pas un langage de programmation ?",
+        "choices": [ "Java", "Python", "Code300", "C++" ],
+        "answer": "Code300",
         "score": 1,
         "required": true
     },
     "2": {
-        "name": "planetes",
+        "name": "IPV6",
         "type": "radio",
-        "question": "Quelle planète en astrologie est associée à la communication et à l'expression de soi ?",
-        "choices": [ "Vénus", "Mars", "Mercure", "Saturne" ],
-        "answer": "Mercure",
-        "score": 1, 
+        "question": "Combien il y a d'addresse IPV6 ?",
+        "choices": [ "60", "2^128", "2^64", "2 000 000" ],
+        "answer": "2^128",
+        "score": 2, 
         "required": true
     },
     "3": {
-        "name": "vie",
+        "name": "CSS",
         "type": "radio",
-        "question": "En numérologie, qu'est-ce que le 'chemin de vie' ?",
-        "choices": [ "Un conept de voyage spirituel", "Le calcul basé sur la date de naissance", "Le lien entre le passé, le présent et le futur", "L'interprétation des rêves" ],
-        "answer": "Le calcul basé sur la date de naissance",
-        "score": 1,
+        "question": "Quelle est la signification de CSS ?",
+        "choices": [ "Cascading Style Sheet", "Cascading Season Sheet", "Cassage Style Sheet"],
+        "answer": "Cascading Style Sheet",
+        "score": 3,
         "required": true
     },
     "4": {
-        "name": "maths",
+        "name": "binaire",
         "type": "radio",
-        "question": "En utilisant la règle de la chaîne de dérivation, trouver dy/dx pour l'équation : y=ln(x^2-2)",
-        "choices": [ "ln(2x)", "1/(x^2-2)", "2x/(x^2-2)", "(x^2-2)", "1/x" ],
-        "answer": "2x/(x^2-2)",
+        "question": "Quelle base utilise le binaire ?",
+        "choices": [ "8", "16", "4", "10", "2" ],
+        "answer": "2",
         "score": 1,
         "required": true
     }
