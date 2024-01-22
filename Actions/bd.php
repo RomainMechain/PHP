@@ -31,11 +31,8 @@ try {
         score INTEGER,
         FOREIGN KEY(idParticipant) REFERENCES PARTICIPANT(idParticipant)
     )");
-    
-    //Insertion du résultat du quiz dans la BD 
 
     // Préparation de la requête pour vérifier si le participant existe déjà
-    
     $check = "SELECT idParticipant FROM PARTICIPANT WHERE username = :username";
     $stmt = $file_db->prepare($check);
     if ($stmt === false) {
