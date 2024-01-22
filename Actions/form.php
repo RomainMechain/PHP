@@ -1,7 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- relier aux fichier CSS -->
+    <link rel="stylesheet" href="/Actions/CSS/form.css" /> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+</head>
+<body>
+    <h1>Questionnaire</h1>
 <?php
 session_start(); // Démarre une nouvelle session ou reprend une session existante
-
-echo "<h1> Questionnaire </h1>";
 echo "<form action='./Actions/submit.php' method='post'>";
 $factory = new Factory('./Data/quizz.json');
 $lst_res = $factory->create();
@@ -20,6 +29,8 @@ foreach ($lst_res as $instance) {
 }
 
 
-echo "<input type='submit' value='Envoyer'>";
+echo "<input class='envoyer' type='submit' value='Envoyer'>";
 echo "</form>";
 ?>
+</body>
+</html>

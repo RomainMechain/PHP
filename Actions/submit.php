@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="stylesheet" href="/Actions/CSS/submit.css" /> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultat</title>
+</head>
+<body>
+    <h1>Resultat</h1>
+
 <?php
 session_start(); // Démarre une nouvelle session ou reprend une session existante
 require_once '../Classes/Autoloader.php';
@@ -10,16 +21,16 @@ use Form\InputRenderInterface;
 
 
 $dico_answer = $_SESSION['dico_answer'];
-
-echo "<h1> Resultat </h1>";
 $score = 0;
+echo"<h2> Vous avez repondu </h2>";
 foreach ($_POST as $key => $value) {
-    echo "Le champ $key a la valeur $value.<br>";
+
+    echo "Pour la question $key a la valeur $value   ";
     if ($dico_answer[$key]["answer"] == $value) {
         $score += $dico_answer[$key]["score"];
-        echo "Bonne réponse !<br>";
+        echo "<span class='vrai'>Bonne réponse !</span><br>";
     } else {
-        echo "Mauvaise réponse !<br>";
+        echo "<span class='faux'>Mauvaise réponse !</span><br>";
     }
 }
 echo "Votre score est de $score points.<br>";
@@ -30,6 +41,6 @@ echo "<input type='text' required name='username' placeholder='Entrez votre nom'
 echo "<input type='submit' value='Envoyer'>";
 echo "</form>";
 
-
-
 ?>
+</body>
+</html>

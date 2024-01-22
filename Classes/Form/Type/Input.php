@@ -9,7 +9,9 @@ abstract class Input extends GenericFormElement
     public function render(): string {
     $html = '<div>';
     $html.= '<p>'.$this->question.'</p>';
+    $html.="<ul>"; 
     for ($i=0; $i < $this->getnbchoice(); $i++) { 
+        $html.="<li>";
         $html .= sprintf(
             '<input type="%s" name="%s" value="%s"><label for="%s">%s</label>',
             $this->getType(),
@@ -18,7 +20,9 @@ abstract class Input extends GenericFormElement
             $this->getValues($i),
             $this->getValues($i)
         );
+        $html.="</li>";
     }
+    $html .= '</ul>';
     $html .= '</div>';
     return $html;
 }
