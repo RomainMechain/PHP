@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultat</title>
+</head>
+<body>
+    <h1>Resultat</h1>
+
 <?php
 session_start(); // Démarre une nouvelle session ou reprend une session existante
 require_once '../Classes/Autoloader.php';
@@ -10,8 +20,6 @@ use Form\InputRenderInterface;
 
 
 $dico_answer = $_SESSION['dico_answer'];
-
-echo "<h1> Resultat </h1>";
 $score = 0;
 foreach ($_POST as $key => $value) {
     echo "Le champ $key a la valeur $value.<br>";
@@ -30,6 +38,6 @@ echo "<input type='text' required name='username' placeholder='Entrez votre nom'
 echo "<input type='submit' value='Envoyer'>";
 echo "</form>";
 
-
-
 ?>
+</body>
+</html>
