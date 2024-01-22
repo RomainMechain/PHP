@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="stylesheet" href="/Actions/CSS/bd.css" /> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau des scores :</title>
+</head>
+<body>
+    <h1>Tableau des scores :</h1>
+
 <?php
 // On recupère les informations des inputs de submit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -55,12 +66,12 @@ try {
     $stmt->bindParam(':score', $score);
     $stmt->execute();
 
-    echo "<h1>Tableau des scores :</h1>";
 
     // Récupération des résultats
     $result = $file_db->query('SELECT * FROM RESULTAT ORDER BY score DESC');
     
     // Affiche les résultats dans un tableau HTML
+    echo "<div class='container'>";
     echo "<table border='1'>
             <tr>
                 <th>Nom d'utilisateur</th>
@@ -77,6 +88,7 @@ try {
               </tr>";
     }
     echo "</table>";
+    echo "</div>";
 
     // fermeture de la connexion
     $file_db = null;
@@ -85,3 +97,5 @@ try {
     echo "Erreur : " . $ex->getMessage();
 }
 ?>
+</body>
+</html>
