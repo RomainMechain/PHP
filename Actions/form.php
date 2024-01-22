@@ -5,8 +5,6 @@ echo "<h1> Questionnaire </h1>";
 echo "<form action='./Actions/submit.php' method='post'>";
 $factory = new Factory('./Data/quizz.json');
 $lst_res = $factory->create();
-echo "<input type='submit' value='Envoyer'>";
-echo "</form>";
 
 $dico = array();
 foreach ($lst_res as $instance) {
@@ -20,4 +18,8 @@ $_SESSION['dico_answer'] = $dico;
 foreach ($lst_res as $instance) {
     echo $instance.PHP_EOL;
 }
+
+
+echo "<input type='submit' value='Envoyer'>";
+echo "</form>";
 ?>
