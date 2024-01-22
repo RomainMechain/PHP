@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- relier aux fichier CSS -->
+    <link rel="stylesheet" href="/Actions/CSS/form.css" /> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire</title>
@@ -27,7 +29,7 @@ foreach ($lst_res as $instance) {
 }
 
 
-echo "<input type='submit' value='Envoyer'>";
+echo "<input class='envoyer' type='submit' value='Envoyer'>";
 echo "</form>";
 ?>
 </body>

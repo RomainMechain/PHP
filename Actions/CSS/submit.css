@@ -1,0 +1,16 @@
+br{
+    margin: 0.5em;
+}
+
+form{
+    margin-top: 1em;
+}
+span{
+    font-weight: bold;
+}
+.vrai{
+    color: green;
+}
+.faux{
+    color: red;
+}
